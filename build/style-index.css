@@ -1,0 +1,40 @@
+/*!***************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[3].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[3].use[2]!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[3].use[3]!./src/style.scss ***!
+  \***************************************************************************************************************************************************************************************************************************************/
+/**
+ * The following styles get applied both on the front of your site
+ * and in the editor.
+ *
+ * Replace them with your own styles or remove the file completely.
+ */
+@font-face {
+  font-family: Gilbert, sans-serif;
+  src: url(fonts/gilbert-color.02d3d364.otf);
+  font-weight: 700;
+}
+.wp-block-create-block-mo-test {
+  font-family: Gilbert, sans-serif;
+  font-size: 64px;
+}
+
+.mo-test-block {
+  background-color: yellowgreen;
+  padding: 12px;
+}
+
+ul.mo_person_social_media {
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+  padding: 0;
+}
+ul.mo_person_social_media a.social_link {
+  display: flex;
+  align-items: center;
+}
+ul.mo_person_social_media a.social_link svg {
+  margin-right: 6px;
+  color: rgb(59, 71, 43);
+}
+
+/*# sourceMappingURL=style-index.css.map*/

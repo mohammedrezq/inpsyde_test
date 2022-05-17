@@ -1,0 +1,18 @@
+{
+    "name": "mohammedrezq/mo-test",
+    "description": "mo-test",
+    "autoload": {
+        "psr-4": {
+            "Mohammedrezq\\MoTest\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "mohammedrezq",
+            "email": "mohammedrezq2000@gmail.com"
+        }
+    ],
+    "require": {
+        "htmlburger/carbon-fields": "^3.3"
+    }
+}
