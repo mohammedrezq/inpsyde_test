@@ -1,7 +1,7 @@
 <?php
 /**
  * Plugin Name:       Mo Test
- * Description:       A Gutenberg block to show your pride! This block enables you to type text and style it with the color font Gilbert from Type with Pride.
+ * Description:       Persons Block for inpsyde job application
  * Version:           0.1.0
  * Requires at least: 5.8
  * Requires PHP:      7.0
@@ -34,6 +34,7 @@ require_once PLUGIN_PATH . 'class-backend.php';
  * Person HTMl
  */
 require_once PLUGIN_PATH . 'inc/personHTML.php';
+require_once PLUGIN_PATH . 'inc/moPersons.php';
 
 
 class MoTest {
