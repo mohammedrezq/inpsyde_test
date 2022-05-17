@@ -21,20 +21,60 @@
 	padding: 12px;
 }
 
-ul.mo_person_social_media {
-    list-style: none;
-    display: flex;
-    justify-content: space-between;
-    padding: 0;
+.person_container_content{
+	background-color: #fdfdfd;
+	border: 1px solid #eaeaea;
+	padding: 12px;
 
-	a.social_link {
-		display: flex;
-		align-items: center;
-
-		svg {
-			margin-right: 6px;
-			color: rgb(59, 71, 43);
-
+	ul.mo_person_social_media {
+		list-style: none;
+		display: grid;
+		padding: 0;
+		grid-template-columns: repeat(auto-fill, minmax(135px, 1fr));
+	
+		.social_item_list {
+			margin: 8px;
+		}
+		a.social_link {
+			display: flex;
+			align-items: center;
+	
+			svg {
+				margin-right: 6px;
+				color: rgb(59, 71, 43);
+				width: 18px !important;
+	
+			}
 		}
 	}
+	
+	.mo_person_position {
+		display: flex;
+		justify-content: center;
+		font-size: 1.1rem;
+		font-weight: 700;
+	}
+	.mo_person_full_name {
+		display: flex;
+		justify-content: center;
+		font-size: 1.1rem;
+		font-weight: 400;
+	}
+	.mo_person_description {
+		display: flex;
+		justify-content: center;
+		font-size: 1.1rem;
+		font-weight: 100;
+	}
+	
+	.mo_person_image {
+		padding: 1rem;
+		margin: 1rem;
+		display: flex;
+		justify-content: center;
+		img {
+			border-radius: 50%;
+		}
+	}
+	
 }
