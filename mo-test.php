@@ -41,9 +41,19 @@ class MoTest {
         add_action('init', array($this, 'create_block_mo_test_block_init'));
         add_action('init', array($this, 'mo_custom_post_type'));
         add_filter( 'register_post_type_args', array($this, 'mo_persons_type_args'), 10, 2 );
+        add_action('rest_api_init', array($this, 'mo_persons_register_rest_routes'));
     }
 
+    public function mo_persons_register_rest_routes() {
+        register_rest_route('inpsyde/v1', '/getHtml', array(
+            'methods' => 'GET',
+            'callback' => array($this, 'mo_persons_get_persons'),
+        ));
+    }
 
+    public function mo_persons_get_persons($data) {
+        return generatePersonHTML($data['personId']);
+    }
     
     /**
      * Registers the block using the metadata loaded from the `block.json` file.

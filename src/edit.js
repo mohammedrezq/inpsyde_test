@@ -23,6 +23,10 @@ import { useBlockProps } from '@wordpress/block-editor';
 
 import { useSelect } from '@wordpress/data';
 
+import { useState, useEffect} from 'react';
+import apiFetch from '@wordpress/api-fetch';
+
+
 /**
  * The edit function describes the structure of your block in the context of the
  * editor. This represents what the editor will render when the block is used.
@@ -36,6 +40,29 @@ import { useSelect } from '@wordpress/data';
  * @return {WPElement} Element to render.
  */
 export default function Edit( { attributes, setAttributes } ) {
+
+	const [preview,setPreview] = useState("");
+
+
+	useEffect(()=>{
+		async function start(){
+			const response = await apiFetch(
+					{
+						path: `/inpsyde/v1/getHtml?personId=${attributes.personId}`,
+						method: 'GET',
+					}
+				)
+
+			setPreview(response);
+		}
+		start();
+	},[attributes.personId])
+
+	console.log(preview);
+	// apiFetch( { path: '/wp/v2/mo_persons' } ).then( ( persons ) => {
+	// 	console.log( persons );
+	// } );
+
 	const allPersons = useSelect(select => {
 		return select('core').getEntityRecords('postType','mo_persons', {per_page: -1});
 	});
@@ -52,18 +79,15 @@ export default function Edit( { attributes, setAttributes } ) {
 					<option value="">Select a person</option>
 					{
 						allPersons.map(person => {
-							console.log(person);
+							// console.log(person);
 							return <option value={person.id} selected={attributes.personId == person.id}>{person.first_name} {person.last_name}</option>
 						}
 						)
 					}
-					{/* <option value="1" selected={attributes.personId == 1}>1</option>
-					<option value="2" selected={attributes.personId == 2}>2</option>
-					<option value="3" selected={attributes.personId == 3}>3</option> */}
 				</select>
 			</div>
 			<div className="person_selected_preview">
-				Here will be a preview of the selected person.
+			<div dangerouslySetInnerHTML={{__html: preview}} />
 			</div>
 
 		</div>
