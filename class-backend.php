@@ -41,6 +41,7 @@ class Persons
                 Field::make('rich_text', 'description', 'Description')
                 ->set_visible_in_rest_api( $visible = true ),
                 Field::make('image', 'image', 'Image')
+                    ->set_value_type( 'url' )
                 ->set_visible_in_rest_api( $visible = true ),
                 Field::make('text', 'position', 'Position')
                 ->set_visible_in_rest_api( $visible = true ),
