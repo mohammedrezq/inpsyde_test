@@ -44,7 +44,8 @@ registerBlockType('create-block/person-block', {
 	/**
 	 * @see ./save.js
 	 */
-	save: function() {
-		return null;
-	},
+	save,
+	// : function() {
+	// 	return null;
+	// },
 } );

@@ -54,10 +54,7 @@ class MoTest {
      */
 
     public function create_block_mo_test_block_init() {
-        register_block_type_from_metadata( __DIR__ . '/build',
-            [
-                'render_callback' => [$this, 'mo_person_custom_block_render'],
-            ]
+        register_block_type_from_metadata( __DIR__ . '/build'
         );
     }
 
