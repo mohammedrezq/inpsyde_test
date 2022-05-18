@@ -78,12 +78,8 @@ class MoTest {
     }
 
     public function mo_persons_frontend_scripts() {
-        wp_register_script('personsTest', plugin_dir_url(__FILE__) . 'assets/test.js', array('jquery'), time(), true);
-        wp_enqueue_script('personsTest');
-        wp_enqueue_style('bootstrap_style_modal', 'https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css', array(), '4.0.0', 'all');
-        wp_enqueue_script('bootstrap_script_popper', 'https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js', array('jquery'), '1.12.9', true);
-        wp_enqueue_script('bootstrap_script_modal', 'https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js', array('jquery', 'bootstrap_script_popper'), '4.0.0', true);
-        
+        wp_register_script('moPersonScript', plugin_dir_url(__FILE__) . 'assets/moPerson.js', array(), time(), true);
+        wp_enqueue_script('moPersonScript'); 
     }
 
     public function mo_person_custom_block_render($attributes) {
