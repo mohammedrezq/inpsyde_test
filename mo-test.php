@@ -35,6 +35,11 @@ require_once PLUGIN_PATH . 'class-backend.php';
  */
 require_once PLUGIN_PATH . 'inc/personHTML.php';
 
+/**
+ * Person Frontend HTML
+ */
+require_once PLUGIN_PATH . 'inc/personFrontendHTML.php';
+
 
 class MoTest {
     public function __construct() {
@@ -42,6 +47,7 @@ class MoTest {
         add_action('init', array($this, 'mo_custom_post_type'));
         add_filter( 'register_post_type_args', array($this, 'mo_persons_type_args'), 10, 2 );
         add_action('rest_api_init', array($this, 'mo_persons_register_rest_routes'));
+        add_action('wp_enqueue_scripts', array($this, 'mo_persons_frontend_scripts') );
     }
 
     public function mo_persons_register_rest_routes() {
@@ -71,9 +77,18 @@ class MoTest {
         );
     }
 
+    public function mo_persons_frontend_scripts() {
+        wp_register_script('personsTest', plugin_dir_url(__FILE__) . 'assets/test.js', array('jquery'), time(), true);
+        wp_enqueue_script('personsTest');
+        wp_enqueue_style('bootstrap_style_modal', 'https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css', array(), '4.0.0', 'all');
+        wp_enqueue_script('bootstrap_script_popper', 'https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js', array('jquery'), '1.12.9', true);
+        wp_enqueue_script('bootstrap_script_modal', 'https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js', array('jquery', 'bootstrap_script_popper'), '4.0.0', true);
+        
+    }
+
     public function mo_person_custom_block_render($attributes) {
         if($attributes['personId']) {
-            return generatePersonHTML($attributes['personId']);
+            return generatePersonFrontendHTML($attributes['personId']);
             
             // '<div class="mo-test-block">
             //     <h1>Mo Test Block</h1>
