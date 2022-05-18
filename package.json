@@ -1,8 +1,8 @@
 {
-	"name": "mo-test",
+	"name": "mo-person",
 	"version": "0.1.0",
-	"description": "A Gutenberg block to show your pride! This block enables you to type text and style it with the color font Gilbert from Type with Pride.",
-	"author": "The WordPress Contributors",
+	"description": "A Gutenberg block for Inpsyde to show a person block in gutenberg block.",
+	"author": "Mohammed Rezq",
 	"license": "GPL-2.0-or-later",
 	"main": "build/index.js",
 	"scripts": {
