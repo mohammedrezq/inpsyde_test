@@ -1,14 +1,14 @@
 <?php
 /**
- * Plugin Name:       Mo Test
- * Description:       A Gutenberg block to show your pride! This block enables you to type text and style it with the color font Gilbert from Type with Pride.
+ * Plugin Name:       Mo Person
+ * Description:       A Gutenberg block for Inpsyde to show a person block in gutenberg block.
  * Version:           0.1.0
  * Requires at least: 5.8
  * Requires PHP:      7.0
  * Author:            The WordPress Contributors
  * License:           GPL-2.0-or-later
  * License URI:       https://www.gnu.org/licenses/gpl-2.0.html
- * Text Domain:       mo-test
+ * Text Domain:       mo-person
  *
  * @package           create-block
  */

@@ -43,22 +43,21 @@ export default function Edit( { attributes, setAttributes } ) {
 
 	const [preview,setPreview] = useState("");
 
+	const theId = attributes.personId ? attributes.personId : "";
 
 	useEffect(()=>{
 		async function start(){
 			const response = await apiFetch(
 					{
-						path: `/inpsyde/v1/getHtml?personId=${attributes.personId}`,
+						path: `/inpsyde/v1/getHtml?personId=${theId}`,
 						method: 'GET',
 					}
 				)
-
 			setPreview(response);
 		}
 		start();
 	},[attributes.personId])
 
-	console.log(preview);
 	// apiFetch( { path: '/wp/v2/mo_persons' } ).then( ( persons ) => {
 	// 	console.log( persons );
 	// } );
@@ -70,10 +69,12 @@ export default function Edit( { attributes, setAttributes } ) {
 
 	const blockProps = useBlockProps();
 
+	console.log("allPersons",allPersons);
+
 	if(allPersons === null) return <p>Loading...</p>
 
 	return (
-		<div className='person_container'>
+		<div { ...blockProps } className='person_container'>
 			<div className="person_select_container">
 				<select onChange={(e) => setAttributes({personId: e.target.value}) }>
 					<option value="">Select a person</option>
@@ -86,10 +87,13 @@ export default function Edit( { attributes, setAttributes } ) {
 					}
 				</select>
 			</div>
-			<div className="person_selected_preview">
-			<div dangerouslySetInnerHTML={{__html: preview}} />
-			</div>
-
+			{
+				attributes.personId && (
+					<div className="person_selected_preview">
+						<div dangerouslySetInnerHTML={{__html: preview}} />
+					</div>
+				)
+			}
 		</div>
 	);
 }
