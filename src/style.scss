@@ -21,138 +21,138 @@
 	padding: 12px;
 }
 
-.person_frontend_container {
+
 
 	
-	.person_container_content{
-		background-color: #fdfdfd;
-		border: 1px solid #eaeaea;
-		padding: 12px;
+.person_container_content{
+	background-color: #fdfdfd;
+	border: 1px solid #eaeaea;
+	padding: 12px;
+
+	ul.mo_person_social_media {
+		list-style: none;
+		display: grid;
+		padding: 0;
+		grid-template-columns: repeat(auto-fill, minmax(135px, 1fr));
 	
-		ul.mo_person_social_media {
-			list-style: none;
-			display: grid;
-			padding: 0;
-			grid-template-columns: repeat(auto-fill, minmax(135px, 1fr));
-		
-			.social_item_list {
-				margin: 8px;
-			}
-			a.social_link {
-				display: flex;
-				align-items: center;
-		
-				svg {
-					margin-right: 6px;
-					color: rgb(59, 71, 43);
-					width: 18px !important;
-		
-				}
+		.social_item_list {
+			margin: 8px;
+		}
+		a.social_link {
+			display: flex;
+			align-items: center;
+	
+			svg {
+				margin-right: 6px;
+				color: rgb(59, 71, 43);
+				width: 18px !important;
+	
 			}
 		}
-		
-		.mo_person_position {
-			display: flex;
-			justify-content: center;
-			font-size: 1.1rem;
-			font-weight: 700;
-		}
-		.mo_person_full_name {
-			display: flex;
-			justify-content: center;
-			font-size: 1.1rem;
-			font-weight: 400;
-		}
-		.mo_person_description {
-			display: flex;
-			justify-content: center;
-			font-size: 1.1rem;
-			font-weight: 100;
-		}
-		
-		.mo_person_image {
-			padding: 1rem;
-			margin: 1rem;
-			display: flex;
-			justify-content: center;
-			img {
-				border-radius: 50%;
-			}
-		}
-		
 	}
-
-	.mo_person_modal {
-		background-color: rgba(0, 0, 0, 0.295);
-
-		.modal-content {
-			border-radius: 0;
-			background-color: #ddd;
-			padding: 1.5rem;
-			position: relative;
-			display: -webkit-box;
-			display: -ms-flexbox;
-			display: flex;
-			-webkit-box-orient: vertical;
-			-webkit-box-direction: normal;
-			-ms-flex-direction: column;
-			flex-direction: column;
-			width: 100%;
-			pointer-events: auto;
-			background-clip: padding-box;
-			border: 1px solid rgba(0,0,0,.2);
-			outline: 0;
-		}
-
-		ul.mo_person_social_media {
-			margin-top: 10px;
-			list-style: none;
-			display: grid;
-			padding: 0;
-			grid-template-columns: repeat(auto-fill, minmax(135px, 1fr));
-		
-			.social_item_list {
-				margin: 8px;
-			}
-			a.social_link {
-				display: flex;
-				align-items: center;
-				color: #000;
-				text-decoration: underline;
-				font-size: 1.1rem;
-		
-				svg {
-					margin-right: 6px;
-					color: rgb(59, 71, 43);
-					width: 18px !important;
-		
-				}
-			}
-		}
-		
-		.mo_person_position {
-			display: flex;
-			justify-content: center;
-			font-size: 1.1rem;
-			font-weight: 700;
-		}
-
-		.mo_person_description {
-			display: flex;
-			justify-content: center;
-			font-size: 1.3rem;
-			font-weight: 400;
-			margin-top: 10px;
-		}
-		.mo_person_full_name {
-			display: flex;
-			justify-content: center;
-			font-size: 1.8rem;
-			font-weight: 700;
-		}
-
+	
+	.mo_person_position {
+		display: flex;
+		justify-content: center;
+		font-size: 1.1rem;
+		font-weight: 700;
 	}
+	.mo_person_full_name {
+		display: flex;
+		justify-content: center;
+		font-size: 1.1rem;
+		font-weight: 400;
+	}
+	.mo_person_description {
+		display: flex;
+		justify-content: center;
+		font-size: 1.1rem;
+		font-weight: 100;
+	}
+	
+	.mo_person_image {
+		padding: 1rem;
+		margin: 1rem;
+		display: flex;
+		justify-content: center;
+		img {
+			border-radius: 50%;
+		}
+	}
+	
 }
+
+.mo_person_modal {
+	background-color: rgba(0, 0, 0, 0.295);
+
+	.modal-content {
+		border-radius: 0;
+		background-color: #ddd;
+		padding: 1.5rem;
+		position: relative;
+		display: -webkit-box;
+		display: -ms-flexbox;
+		display: flex;
+		-webkit-box-orient: vertical;
+		-webkit-box-direction: normal;
+		-ms-flex-direction: column;
+		flex-direction: column;
+		width: 100%;
+		pointer-events: auto;
+		background-clip: padding-box;
+		border: 1px solid rgba(0,0,0,.2);
+		outline: 0;
+	}
+
+	ul.mo_person_social_media {
+		margin-top: 10px;
+		list-style: none;
+		display: grid;
+		padding: 0;
+		grid-template-columns: repeat(auto-fill, minmax(135px, 1fr));
+	
+		.social_item_list {
+			margin: 8px;
+		}
+		a.social_link {
+			display: flex;
+			align-items: center;
+			color: #000;
+			text-decoration: underline;
+			font-size: 1.1rem;
+	
+			svg {
+				margin-right: 6px;
+				color: rgb(59, 71, 43);
+				width: 18px !important;
+	
+			}
+		}
+	}
+	
+	.mo_person_position {
+		display: flex;
+		justify-content: center;
+		font-size: 1.1rem;
+		font-weight: 700;
+	}
+
+	.mo_person_description {
+		display: flex;
+		justify-content: center;
+		font-size: 1.3rem;
+		font-weight: 400;
+		margin-top: 10px;
+	}
+	.mo_person_full_name {
+		display: flex;
+		justify-content: center;
+		font-size: 1.8rem;
+		font-weight: 700;
+	}
+
+}
+
 
 
 /** Modal */
