@@ -24,7 +24,7 @@ function generatePersonFrontendHTML($id) {
         
         ?>
         <div class="person_frontend_container">
-            <div class="person_container_content" data-toggle="modal" data-target="#exampleModalCenter_<?php echo $id; ?>">
+            <div class="person_container_content">
                 <div class="mo_person_image">
                     <?php echo wp_get_attachment_image($person_image, 'thumbnail'); ?>
                 </div>
